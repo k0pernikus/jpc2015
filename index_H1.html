@@ -1,0 +1,57 @@
+<html manifest="cache.appcache">
+<head>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class="content">
+  <header>
+  <h1>My awesome conference</h1>
+</header>
+
+<a href="index.html">Home</a>
+
+<h2>H1 - Freiag</h2>
+
+
+<div class="slot-container">
+  <span class="slot-time-start">16:00</span> -
+  <span class="slot-time-end">17:00</span>
+
+  <div class="talks-container">
+    <div class="talk-container">
+      <div class="talk-title">Ankunft</div>
+      <div class="talk-footer">
+        <div class="talk-speaker">Robin Drexler</div>
+        <div class="talk-location">H1</div>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<script type="application/javascript">
+  (function () {
+    if (!window.applicationCache) {
+      return;
+    }
+    window.addEventListener('load', function (e) {
+      window.applicationCache.addEventListener('updateready', function (e) {
+        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+          if (confirm('Schedule has updated. Want to reload?')) {
+            window.location.reload();
+          }
+        }
+      }, false);
+
+    }, false);
+  })();
+
+</script>
+</body>
+
+</html>
